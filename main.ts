@@ -1,5 +1,5 @@
 function LightUp (num: number) {
-    led.plot(num % 5, num / 5)
+    led.plot(num % 5, Math.floor(num / 5))
     LightsOn.push(num)
 }
 input.onButtonPressed(Button.A, function () {
@@ -22,6 +22,7 @@ input.onButtonPressed(Button.AB, function () {
     basic.showString("RESET")
     LightsOn = []
     OldestLight = 0
+    CurrentLight = 0
 })
 input.onButtonPressed(Button.B, function () {
     if (LightsOn.length > 0) {
